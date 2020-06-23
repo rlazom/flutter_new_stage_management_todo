@@ -13,12 +13,6 @@ class TodoList extends ChangeNotifier {
     notifyListeners();
   }
 
-  void edit(String id) {
-    Todo tItem = this._list.firstWhere((Todo item) => item.id == id);
-    tItem.toggle();
-    notifyListeners();
-  }
-
   void remove(Todo removedItem) {
     this._list.remove(removedItem);
     notifyListeners();

@@ -15,8 +15,7 @@ class TodoListWdt extends StatelessWidget {
       itemCount: todoList.list.length,
       itemBuilder: (context, index) {
         return ChangeNotifierProvider<Todo>(
-          notifier: Todo(todoList.list[index].id, todoList.list[index].title, todoList.list[index].done),
-          dispose: (counter) => counter.dispose(),
+          notifier: todoList.list[index],
           child: new TodoListItemWdt()
         );
       },

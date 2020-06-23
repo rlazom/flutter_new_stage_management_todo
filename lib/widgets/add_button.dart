@@ -11,7 +11,7 @@ class AddButton extends StatelessWidget {
 
     return FloatingActionButton(
       onPressed: () {
-        todoList.add(new Todo('${todoList.list.length}', 'tituloTodo${todoList.list.length}', false));
+        todoList.add(new Todo(id: '${todoList.list.length}', title: 'tituloTodo${todoList.list.length}'));
       },
       tooltip: 'Increment',
       child: Icon(Icons.add),
