@@ -19,7 +19,6 @@ class MyApp extends StatelessWidget {
       ),
       home: ChangeNotifierProvider<TodoList>(
         notifier: TodoList(),
-        dispose: (todoList) => todoList.dispose(),
         child: MyHomePage(
           title: 'Flutter Demo Home Page',
         ),

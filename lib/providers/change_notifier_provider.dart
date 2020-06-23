@@ -9,10 +9,9 @@ typedef ChangeNotifierProviderDispose<T> = void Function(T notifier);
 class ChangeNotifierProvider<T extends ChangeNotifier> extends StatefulWidget {
   final Widget child;
   final T notifier;
-  final ChangeNotifierProviderDispose<T> dispose;
 
   const ChangeNotifierProvider(
-      {Key key, @required this.notifier, this.dispose, @required this.child})
+      {Key key, @required this.notifier, @required this.child})
       : super(key: key);
 
   @override
@@ -33,7 +32,7 @@ class _ChangeNotifierProviderState<T extends ChangeNotifier>
 
   @override
   void dispose() {
-    widget.dispose?.call(widget.notifier);
+    widget.notifier.dispose();
     super.dispose();
   }
 }
